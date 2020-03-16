@@ -1,0 +1,25 @@
+
+
+ .table{
+     margin-top: 100px;
+   /* margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 100px; */
+  text-align: center;
+  
+} 
+
+
+
+.table td{
+    border: 1px solid black;
+
+}
+
+button{
+ margin-left:30px;   
+}
+
+.btn-success{
+  margin-top: 30px;
+}

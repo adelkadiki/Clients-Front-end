@@ -1,0 +1,27 @@
+.form-inline{
+   /* margin-left: 10%; */
+   /* margin-right: 40px; */
+  }
+
+  mat-form-field  {
+    /* display: block; */
+    margin: 70px;
+   
+    
+  }
+
+  button{
+    margin-left: 70px;
+    margin-bottom: 50px;
+  }
+
+   textarea.mat-input-element {
+    height: 70px;
+    width: 250px;
+} 
+
+h5{
+  text-align: center;
+  margin-top: 120px;
+}
+

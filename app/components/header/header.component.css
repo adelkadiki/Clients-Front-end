@@ -1,0 +1,11 @@
+.navbar{
+
+    height: 70px;
+    
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+}

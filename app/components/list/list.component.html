@@ -1,0 +1,35 @@
+<mat-form-field>
+  <input (keyup)="find($event.target.value)" matInput placeholder="Find Client">
+</mat-form-field>
+
+<h3>{{error}}</h3>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <!-- Position Column -->
+  
+  <ng-container matColumnDef="domain">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Domain </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.domain}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="owner">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Owner </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.owner}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="expDate">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Expiration Date </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.expDate | date : 'longDate' : 'MMMM d, y'}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row (click)="getRow(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

@@ -1,0 +1,70 @@
+<table class="table">
+
+   <!-- first row -->
+    <thead class="thead-dark">
+      <tr>
+        <th>Domain</th>
+        <th>Owner</th>
+        <th>Expiration Date</th>
+         <th>Email</th>
+        <th>Hosting Company</th> 
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+              <tr *ngFor="let c of clients">
+                <td>{{c.domain}}</td>
+                <td>{{c.owner}}</td>
+                <td>{{c.expDate | date | uppercase}}</td>
+                 <td>{{c.email}}</td>
+                <td>{{c.hostComp}}</td> 
+              </tr>
+      
+    </tbody>
+
+    <thead class="thead-dark">
+        <tr>
+         
+           <th>Deployment Date</th> 
+           <th>CP URL</th>
+          <th>CP Username</th>
+          <th>CP Password</th>
+          <th>Notices</th>
+            
+          
+        </tr>
+      </thead>
+      <tbody>
+      
+          <tr *ngFor="let c of clients">
+            
+             <td>{{c.depDate |date|uppercase}}</td> 
+             <td>{{c.cpUrl}}</td>
+            <td>{{c.cpUsername}}</td>
+            <td>{{c.cpPassword}}</td>
+            <td>{{c.notices}}</td> 
+             
+            
+          </tr>
+  
+</tbody>
+
+</table>
+
+<div *ngFor="let c of clients"> 
+    <button (click)="updateClient(c.id)" class="btn btn-primary">Update</button>
+    <button class="btn btn-danger"
+    mwlConfirmationPopover
+    [popoverTitle]="popoverTitle"
+    [popoverMessage]="popoverMessage"
+    placement="right"
+    (confirm)="deleteClient(c.id)"
+    (cancel)="cancelClicked = true">Delete</button>
+</div>
+<button (click)="list()" class="btn btn-success">Back to list</button>
+
+    <!-- first row -->
+
+    

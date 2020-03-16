@@ -1,0 +1,16 @@
+<form (ngSubmit)="register()" #form="ngForm" novalidate>
+
+    <div *ngIf="errorMsg">{{errorMsg}}</div>
+
+    <label>Name</label>
+    <input type="text" id="name" name="name" [(ngModel)]="user.name" #name="ngModel" required>
+    
+    <label>Username</label>
+    <input type="text" id="username" name="username" [(ngModel)]="user.username" #username="ngModel" required>
+    
+    <label>Password</label>
+    <input type="text" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
+
+    <button type="submit" >Submit</button>
+
+</form>
